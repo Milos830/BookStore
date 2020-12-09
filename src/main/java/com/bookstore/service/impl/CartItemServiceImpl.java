@@ -1,6 +1,5 @@
 package com.bookstore.service.impl;
 
-
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.bookstore.domain.Book;
 import com.bookstore.domain.BookToCartItem;
 import com.bookstore.domain.CartItem;
+import com.bookstore.domain.Order;
 import com.bookstore.domain.ShoppingCart;
 import com.bookstore.domain.User;
 import com.bookstore.repository.BookToCartItemRepository;
@@ -76,11 +76,12 @@ public class CartItemServiceImpl implements CartItemService{
 		bookToCartItemRepository.deleteByCartItem(cartItem);
 		cartItemRepository.delete(cartItem);
 	}
-
-	@Override
-	public void save(CartItem cartItem) {
-		
-		cartItemRepository.save(cartItem);
+	
+	public CartItem save(CartItem cartItem) {
+		return cartItemRepository.save(cartItem);
 	}
 
+	public List<CartItem> findByOrder(Order order) {
+		return cartItemRepository.findByOrder(order);
+	}
 }

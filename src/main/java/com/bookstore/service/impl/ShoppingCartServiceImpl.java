@@ -39,7 +39,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 		
 		return shoppingCart;
 	}
-
+	
 	public void clearShoppingCart(ShoppingCart shoppingCart) {
 		List<CartItem> cartItemList = cartItemService.findByShoppingCart(shoppingCart);
 		
@@ -52,4 +52,5 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 		
 		shoppingCartRepository.save(shoppingCart);
 	}
+
 }

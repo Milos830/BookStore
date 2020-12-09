@@ -113,10 +113,4 @@ public class ShippingAddress {
 		this.order = order;
 	}
 
-
-
-
-
-	
-
 }
